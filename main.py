@@ -28,6 +28,8 @@ window_res = (640, 480)
 window = pygame.display.set_mode(window_res)
 pygame.display.set_caption("Undertale.py")
 
+real_width, real_height = pygame.display.get_surface().get_size()
+
 game_running = True
 while game_running:
     try:
