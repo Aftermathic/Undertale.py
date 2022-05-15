@@ -1,0 +1,9 @@
+venv/
+.config/
+.replit
+replit.nix
+poetry.lock
+pyproject.toml
+
+#you are not allowed to know what's the next  thing >:)
+to_do.txt
