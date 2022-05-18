@@ -1,6 +1,6 @@
 import os
 
-libraries = ["pygame"]
+libraries = ["pygame", "pypresence"]
 for i in range(len(libraries)):
     os.system(f"pip install {libraries[i]}")
 
