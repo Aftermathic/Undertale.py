@@ -1,6 +1,7 @@
 #Imports
 from pypresence import Presence
 from data.screens import battle, gameover, titlescr
+from data.handlers import *
 
 import settings
 import os
@@ -65,7 +66,7 @@ while game_running:
             current_screen = 1
 
         if discord_found:
-            rpc.update(state="In titlescreen")
+            rpc.update(state="In Titlescreen...", details="Idle", large_image="titlescreen")
             
     elif current_screen == 1:
         battle.update(window)
@@ -74,11 +75,11 @@ while game_running:
             current_screen = 0
             
         if discord_found:
-            rpc.update(state="In a battle")
+            rpc.update(state=f"Fighting {settings.enemyname}", details="None", large_image="battleheart")
             
     else:
-        if settings.show_messages:
-            print("You might have been sent to a invalid screen.")
+        text = fonthandler.Font("data/fonts/DeterminationMono.TTF", 16, "you have been sent to a invalid screen...")
+        text.display(0, 0, window)
             
         if discord_found:
             rpc.update(state="In an invalid screen.")

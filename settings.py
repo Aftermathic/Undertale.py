@@ -2,7 +2,7 @@
 pygame_starttext = False
 
 #GLOBALS
-show_messages = True
+show_messages = False
 allow_fullscreen = True
 
 #TITLESCREEN VARS
