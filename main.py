@@ -13,7 +13,7 @@ import pygame
 
 #Disable Pygame Startup text
 if not settings.pygame_starttext:
-    os.system("clear")
+    os.system("cls")
 
 #####################################################
 
@@ -25,8 +25,6 @@ try:
     test = Presence("975454058477396060")
     test.connect()
 except:
-    if settings.show_messages:
-        print("Discord wasn't found in the computer.")
     discord_found = False
 else:
     discord_found = True
@@ -57,6 +55,9 @@ battle = Battle()
 
 game_running = True
 while game_running:
+    if not settings.show_messages:
+        os.system("cls")
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game_running = False
