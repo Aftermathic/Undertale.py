@@ -1,6 +1,9 @@
 #Imports
 from pypresence import Presence
-from data.screens import battle, gameover, titlescr
+
+from data.screens import gameover, titlescr
+from data.screens.battle import Battle
+
 from data.handlers import *
 
 import settings
@@ -29,7 +32,8 @@ else:
     discord_found = True
 
     del test
-    
+
+    #create your own client thing
     rpc = Presence("975454058477396060")
     rpc.connect()
 
@@ -49,6 +53,7 @@ current_screen = 0
 ####################################################
 
 #Event Loop
+battle = Battle()
 
 game_running = True
 while game_running:
@@ -82,7 +87,7 @@ while game_running:
         text.display(0, 0, window)
             
         if discord_found:
-            rpc.update(state="In an invalid screen.")
+            rpc.update(state="In an invalid screen.", details="An error may have occurred.")
                 
     clock.tick(fps)
     pygame.display.update()
