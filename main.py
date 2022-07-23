@@ -13,7 +13,7 @@ import pygame
 
 #Disable Pygame Startup text
 if not settings.pygame_starttext:
-    os.system("cls")
+    os.system("cls" if os.name == "nt" else "clear")
 
 #####################################################
 
